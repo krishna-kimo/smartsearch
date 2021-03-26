@@ -1,0 +1,17 @@
+version: "2.0"
+
+nlu:
+- intent: smartsearch
+  examples: |
+          - [Machine Learning](search_term) only [articles](content_type) for [30 min](content_time)
+          - [10 min](content_time) of [blockchain](search_term) 
+          - show me only [videos](content_type) about [cryptocurrency](search_term) for [20 min](content_time)
+          - [blockchain](search_term) for [20 min](content_time)
+          - [articles](content_type) about [cloud computing](search_term)
+          - Need [videos](content_type) about [cloud](search_term)
+          - Only [videos] for [Artificail Intelligence](content_type)
+
+- intent: greet
+  examples: |
+          - hi
+          - Hello

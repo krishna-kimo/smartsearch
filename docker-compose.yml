@@ -1,0 +1,27 @@
+version: '3'
+services:
+        api:
+                build:
+                        context: search_api
+                        dockerfile: Dockerfile
+                container_name: search_api
+                image: search_api:beta
+                restart: unless-stopped
+                depends_on:
+                        - rasa
+                networks:
+                        - smartsearch
+
+        rasa:
+                build:
+                        context: rasa_diet
+                        dockerfile: Dockerfile
+                container_name: rasa_diet
+                image: rasa_diet:beta
+                restart: unless-stopped
+                networks:
+                        - smartsearch
+
+networks:
+        smartsearch:
+                driver: bridge
