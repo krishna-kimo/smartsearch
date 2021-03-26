@@ -11,6 +11,8 @@ services:
                         - rasa
                 networks:
                         - smartsearch
+                ports:
+                        - "80:80"
 
         rasa:
                 build:
@@ -19,6 +21,8 @@ services:
                 container_name: rasa_diet
                 image: rasa_diet:beta
                 restart: unless-stopped
+                ports:
+                        - "5005:5005"
                 networks:
                         - smartsearch
 
